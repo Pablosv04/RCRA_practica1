@@ -2,15 +2,15 @@ import sys
 
 def parse_input(file_path):
     with open(file_path, 'r') as f:
-        lines = [line.strip() for line in f.readlines()]
+        lines = [line.strip() for line in f.readlines() if line.strip()]
     return lines
 
 def generate_lp(lines, output_file):
     n = len(lines)  # Grid size
     facts = [f"#const n={n}."]
     
-    for x, row in enumerate(lines, start=1):
-        for y, cell in enumerate(row, start=1):
+    for x, row in enumerate(lines, start=0):
+        for y, cell in enumerate(row, start=0):
             if cell == '0':
                 facts.append(f"cell({x},{y},white).")
             elif cell == '1':

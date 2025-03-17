@@ -1,0 +1,21 @@
+#const n=10.
+cell(1,2,white).
+cell(1,3,white).
+cell(2,1,white).
+cell(2,5,white).
+cell(2,7,black).
+cell(2,8,black).
+cell(3,2,white).
+cell(3,4,black).
+cell(3,5,white).
+cell(3,6,black).
+cell(4,1,white).
+cell(4,5,white).
+cell(4,8,black).
+cell(6,3,white).
+cell(6,8,black).
+cell(7,0,white).
+cell(7,1,white).
+cell(7,4,black).
+cell(7,6,black).
+cell(9,0,black).
