@@ -13,10 +13,7 @@ start(white,X,Y):-cell(X,Y,white),#min {X1+Y1: cell (X1,Y1,white)}= X+Y.
 
 :- cell(X,Y,C1), cell(X,Y,C2), C1 != C2.
 
-% Ensure reachability for the smallest black and white cells separately
 reach(X,Y,C) :- start(C,X,Y).
-%reach(1,1,0).
-%reach(1,2,1).
 
 reach(X,Y,C) :- cell(X,Y,C), reach(X-1,Y,C), X > 0.
 reach(X,Y,C) :- cell(X,Y,C), reach(X+1,Y,C), X < n-1.
@@ -24,6 +21,8 @@ reach(X,Y,C) :- cell(X,Y,C), reach(X,Y-1,C), Y > 0.
 reach(X,Y,C) :- cell(X,Y,C), reach(X,Y+1,C), Y < n-1.
 
 :- cell(X,Y,C), not reach(X,Y,C), cell(X1,Y1,C), reach(X1,Y1,C).
+
+_drawcircle(X,Y,C) :- cell(X,Y,C).
 
 #show cell/3.
 
